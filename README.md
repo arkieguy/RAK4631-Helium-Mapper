@@ -114,6 +114,8 @@ Due to the complexity of the code, it is split into functional parts.
    - GPS initialization and and data poll functions
 - loraHandler.cpp
    - LoRaWan initialization function, LoRaWan handling task and LoRaWan event callbacks
+- include/config.cpp.example
+   - This is a sample config file.  Copy it to include/config.cpp and configure to match your Helium settings.
 
 How to achieve power saving with nRF52 cores on Arduino IDE
 ----
