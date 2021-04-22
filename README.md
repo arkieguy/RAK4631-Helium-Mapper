@@ -3,9 +3,9 @@
 | :-: | :-: |
 | <center><img src="./assets/rakstar.jpg" alt="RAKstar" width=25%></center> | <center><img src="./assets/WisBlock.svg" alt="WisBlock" width=75%></center> |    
 
-RAK4631 LoRaWan® tracker node solution![RAKwireless](./assets/RAK-Whirls.png)
+RAK4631 LoRaWan® Helium Mapper node solution![RAKwireless](./assets/RAK-Whirls.png)
 ===    
-This code acts as a LoRaWan® tracker node. It gets location information from an attached uBlox GPS module. In addition an acceleration sensor is used to detect if the tracker is moving.
+This code acts as a LoRaWan® mapper node for the Helium Network. It gets location information from an attached uBlox GPS module. In addition an acceleration sensor is used to detect if the tracker is moving.
 If moving of the tracker is detected, location information is sent immediately. If the tracker is stationary, the location data is sent every 1 minute 
 
 Solution
@@ -42,18 +42,17 @@ To build this solution the following is required
 
 LoRaWan server required
 ---
-In order to get this code working you need access to a LoRaWan® gateway. This could be either of    
-- a public LoRaWan® gateway, like [TheThingsNetwork](https://thethingsnetwork.org/) provides in several big cities all over the world
+In order to get this code working you need access to a LoRaWan® gateway (configured for Helium US915). This could be either of    
+- a public LoRaWan® gateway, like [Helium Network](https://helium.com/) provides in several big cities all over the world
 - a private LoRaWan® gateway with multi-channel capability
 - a simple and cheap single channel LoRaWan® gateway
 
-In addition you need an account at TheThingsNetwork. You need to create an application there and register your device before the data you send over LoRa can be forwarded by the gateway. It is quite simple and there is a good tutorial at [RAKwireless RAK4270 Quick Start Guide](https://docs.rakwireless.com/Product-Categories/WisDuo/RAK4270-Module/Quickstart/#connecting-to-the-things-network-ttn). It is for another product of RAK, but the steps how to setup an application and how to register your device are the same. 
+In addition you need an account on Helium. You need to create an application there and register your device before the data you send over LoRa can be forwarded by the gateway. It is quite simple and there is a good tutorial at [Getting WisBlock by RAKwireless Up and Running on The People’s Network](https://blog.helium.com/my-take-on-the-wisblock-e8b934ceb64).
 
 The region you live in defines the frequency your LoRaWan® gateways will use. So you need to setup your device to work on the correct frequency.    
 ##### With the new LoRaWAN® library SX126x-Arduino **V2.0.0** the region is set as a parameter in **`lmh_init()`**.
 
-In the call **`lmh_init()`** the last parameter defines the LoRaWAN® region.    
-~~The region is setup by adding a build flag into your projects platformio.ini file.~~    
+In the call **`lmh_init()`** the last parameter defines the LoRaWAN® region. 
 
 Short explanation about the new **`lmh_init()`** call:    
 ```cpp
