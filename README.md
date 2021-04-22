@@ -4,6 +4,7 @@
 | <center><img src="./assets/rakstar.jpg" alt="RAKstar" width=25%></center> | <center><img src="./assets/WisBlock.svg" alt="WisBlock" width=75%></center> |    
 
 RAK4631 LoRaWan® Helium Mapper node solution![RAKwireless](./assets/RAK-Whirls.png)
+
 Based extensively on: beegee-tokyo/RAK4631-LPWAN-Tracker
 ===    
 This code acts as a LoRaWan® mapper node for the Helium Network. It gets location information from an attached uBlox GPS module. In addition an acceleration sensor is used to detect if the tracker is moving.
