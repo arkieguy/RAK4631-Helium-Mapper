@@ -1,0 +1,19 @@
+/** Helium OTAA configuration
+  * 
+  * Copy this file to include/config.cpp and change to reflect your Helium sttings
+  *
+  */
+
+#define HELIUM_REGION   LORAMAC_REGION_US915
+#define HELIUM_DR       DR_1
+#define HELIUM_TX       TX_POWER_0
+#define HELIUM_CONFIRM  LMH_UNCONFIRMED_MSG
+
+// Device EUI required for OTAA network join=
+uint8_t nodeDeviceEUI[8] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+
+// Application EUI required for network join
+uint8_t nodeAppEUI[8] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+
+// Application key required for network join
+uint8_t nodeAppKey[16] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};

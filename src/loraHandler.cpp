@@ -11,6 +11,9 @@
 #include "main.h"
 #include <LoRaWan-RAK4630.h>
 
+//  Set up your Helium AppEUI, DeviceEUI and AppKey in this file!
+#include "config.cpp"
+
 /** Software timer to switch off the LED after sending a LoRaWan package */
 SoftwareTimer ledTicker;
 
@@ -48,19 +51,13 @@ void sendLoRaFrame(void);
  * LORAWAN_DUTYCYCLE_ON or LORAWAN_DUTYCYCLE_OFF to enable or disable duty cycles
  *                   Please note that ETSI mandates duty cycled transmissions. 
  */
-static lmh_param_t lora_param_init = {LORAWAN_ADR_OFF, DR_3, LORAWAN_PUBLIC_NETWORK, JOINREQ_NBTRIALS, TX_POWER_15, LORAWAN_DUTYCYCLE_OFF};
+static lmh_param_t lora_param_init = {LORAWAN_ADR_OFF, HELIUM_DR, LORAWAN_PUBLIC_NETWORK, JOINREQ_NBTRIALS, HELIUM_TX, LORAWAN_DUTYCYCLE_OFF};
 
 /** Structure containing LoRaWan callback functions, needed for lmh_init() */
 static lmh_callback_t lora_callbacks = {lorawanBattLevel, BoardGetUniqueId, BoardGetRandomSeed,
 										lorawan_rx_handler, lorawan_has_joined_handler, lorawan_confirm_class_handler};
 
-/** Device EUI required for OTAA network join */
-uint8_t nodeDeviceEUI[8] = {0x00, 0x0D, 0x75, 0xE6, 0x56, 0x4D, 0xC1, 0xF5};
-/** Application EUI required for network join */
-uint8_t nodeAppEUI[8] = {0x70, 0xB3, 0xD5, 0x7E, 0xD0, 0x02, 0x01, 0xE1};
-/** Application key required for network join */
-uint8_t nodeAppKey[16] = {0x2B, 0x84, 0xE0, 0xB0, 0x9B, 0x68, 0xE5, 0xCB, 0x42, 0x17, 0x6F, 0xE7, 0x53, 0xDC, 0xEE, 0x79};
-/** Device address required for ABP network join */
+
 uint32_t nodeDevAddr = 0x26021FB5;
 /** Network session key required for ABP network join */
 uint8_t nodeNwsKey[16] = {0x32, 0x3D, 0x15, 0x5A, 0x00, 0x0D, 0xF3, 0x35, 0x30, 0x7A, 0x16, 0xDA, 0x0C, 0x9D, 0xF5, 0x3F};
@@ -113,7 +110,7 @@ uint8_t initLoRaHandler(void)
 	lmh_setDevAddr(nodeDevAddr);
 
 	// Initialize LoRaWan
-	err_code = lmh_init(&lora_callbacks, lora_param_init, doOTAA, CLASS_A, LORAMAC_REGION_AS923);
+	err_code = lmh_init(&lora_callbacks, lora_param_init, doOTAA, CLASS_A, HELIUM_REGION);
 	if (err_code != 0)
 	{
 		return 2;
@@ -133,7 +130,7 @@ uint8_t initLoRaHandler(void)
 	// For some regions we might need to define the sub band the gateway is listening to
 	// This must be called AFTER lmh_init()
 	/// \todo This is for Dragino LPS8 gateway. How about other gateways???
-	if (!lmh_setSubBandChannels(1))
+	if (!lmh_setSubBandChannels(2))
 	{
 		return 3;
 		Serial.println("lmh_setSubBandChannels failed. Wrong sub band requested?");
@@ -274,7 +271,7 @@ static void lorawan_confirm_class_handler(DeviceClass_t Class)
 	// Informs the server that switch has occurred ASAP
 	m_lora_app_data.buffsize = 0;
 	m_lora_app_data.port = LORAWAN_APP_PORT;
-	lmh_send(&m_lora_app_data, LMH_UNCONFIRMED_MSG);
+	lmh_send(&m_lora_app_data, HELIUM_CONFIRM );
 	xSemaphoreGive(loopEnable);
 }
 
