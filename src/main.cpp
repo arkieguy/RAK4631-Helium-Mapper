@@ -222,8 +222,9 @@ void loop()
 				}
 
 				// Get battery level
-				battLevel = readBatt();
+				battLevel = readBattVolts();
 				trackerData.batt = battLevel;
+				Serial.println( trackerData.batt );
 				// coords[9] = battLevel;
 
 				// Send the location information

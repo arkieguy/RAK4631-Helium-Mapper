@@ -116,3 +116,8 @@ uint8_t readBatt(void)
 	float vbat_mv = readVBAT();
 	return mvToPercent(vbat_mv);
 }
+
+uint8_t readBattVolts(void) 
+{
+	return( ceil( readVBAT() / 100) );
+}

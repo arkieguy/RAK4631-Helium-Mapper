@@ -60,7 +60,9 @@ bool pollGPS(void);
 /** Fixed calculation of milliVolt from compensation value */
 #define REAL_VBAT_MV_PER_LSB (VBAT_DIVIDER_COMP * VBAT_MV_PER_LSB)
 void initReadVBAT(void);
+float readVBAT(void);
 uint8_t readBatt(void);
+uint8_t readBattVolts(void) ;
 uint8_t lorawanBattLevel(void);
 extern uint8_t battLevel;
 
