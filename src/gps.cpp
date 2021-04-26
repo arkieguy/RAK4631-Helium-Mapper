@@ -53,11 +53,13 @@ bool pollGPS(void)
 	bool hasTime = false;
 	bool hasSpeed = false;
 	bool hasHdop = false;
+	bool hasSats = false;
 	int64_t latitude = 0;
 	int64_t longitude = 0;
 	int32_t altitude = 0;
 	uint16_t speed = 0;
 	uint8_t hdop = 0;
+	uint8_t sats = 0;
 
 	digitalWrite(LED_BUILTIN, HIGH);
 	while ((millis() - timeout) < 10000)
@@ -89,9 +91,14 @@ bool pollGPS(void)
 					hasHdop = true;
 					hdop = myGPS.hdop.hdop();
 				}
+				else if (myGPS.satellites.isUpdated() && myGPS.satellites.isValid()) 
+				{
+					hasSats = true;
+					sats = myGPS.satellites.value();
+				}
 			}
 			// if (hasPos && hasAlt && hasDate && hasTime && hasSpeed && hasHdop)
-			if (hasPos && hasAlt && hasSpeed && hasHdop && hasTime)
+			if (hasPos && hasAlt && hasSpeed && hasHdop && hasTime && hasSats)
 			{
 				break;
 			}
@@ -127,6 +134,8 @@ bool pollGPS(void)
 
 		trackerData.sp_1 = speed;
 		trackerData.sp_2 = speed >> 8;
+
+		trackerData.sats = sats;
 	}
 	else
 	{

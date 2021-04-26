@@ -96,6 +96,8 @@ struct tracker_data_s
 	uint8_t batt; // 12
 	uint8_t sp_1; // 13
 	uint8_t sp_2; // 14
+	uint8_t sats; // 15
+	uint8_t accu; // 16
 };
 extern tracker_data_s trackerData;
-#define TRACKER_DATA_LEN 14 // sizeof(trackerData)
+#define TRACKER_DATA_LEN 16 // sizeof(trackerData)
