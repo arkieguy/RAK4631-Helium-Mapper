@@ -9,7 +9,7 @@ RAK4631 LoRaWan® Helium Mapper node solution![RAKwireless](./assets/RAK-Whirls.
 Based extensively on: beegee-tokyo/RAK4631-LPWAN-Tracker
     
 This code acts as a LoRaWan® mapper node for the Helium Network. It gets location information from an attached uBlox GPS module. In addition an acceleration sensor is used to detect if the tracker is moving.
-If moving of the tracker is detected, location information is sent immediately. If the tracker is stationary, the location data is sent every 1 minute 
+If movement of the tracker is detected, location information is sent immediately. If the tracker is stationary, the location data is sent every 1 minute 
 
 Solution
 ---
@@ -114,6 +114,8 @@ Due to the complexity of the code, it is split into functional parts.
    - GPS initialization and and data poll functions
 - loraHandler.cpp
    - LoRaWan initialization function, LoRaWan handling task and LoRaWan event callbacks
+- include/config.cpp.example
+   - This is a sample config file.  Copy it to include/config.cpp and configure to match your Helium settings.
 
 How to achieve power saving with nRF52 cores on Arduino IDE
 ----
