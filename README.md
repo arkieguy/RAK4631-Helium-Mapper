@@ -50,7 +50,7 @@ To build this solution the following is required
 
 Setting Up your WisBlock core  on PlatformIO
 ---
-PlatformIO is a great platform to develope embedded systems.  [Here are the instructions for getting Rak WisBlocks set up on PlatformIO.](https://github.com/RAKWireless/WisBlock/tree/master/PlatformIO/RAK4630)  Be aware that this project is based on the 2021 firmware (probably newer than what came on your WisBlock Core.  [To upgrade the firmware, follow the isntructions here.](https://github.com/RAKWireless/WisBlock/tree/master/bootloader/RAK4630/new)
+PlatformIO is a great platform to develope embedded systems.  [Here are the instructions for getting Rak WisBlocks set up on PlatformIO.](https://github.com/RAKWireless/WisBlock/tree/master/PlatformIO/RAK4630)  Be aware that this project is based on the 2021 firmware (probably newer than what came on your WisBlock Core.  [To upgrade the firmware, follow the instructions here.](https://github.com/RAKWireless/WisBlock/tree/master/bootloader/RAK4630/new)
 
 LoRaWan server required
 ---
