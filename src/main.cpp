@@ -135,7 +135,7 @@ void setup()
 
 	// Prepare timers
 	delayedSending.begin(10000, sendDelayed, NULL, false);
-	periodicSending.begin(60000, sendPeriodic);
+	periodicSending.begin(15000, sendPeriodic);
 	periodicSending.start();
 }
 
@@ -224,7 +224,6 @@ void loop()
 				// Get battery level
 				battLevel = readBattVolts();
 				trackerData.batt = battLevel;
-				Serial.println( trackerData.batt );
 				// coords[9] = battLevel;
 
 				// Send the location information

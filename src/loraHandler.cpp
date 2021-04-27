@@ -302,12 +302,12 @@ void sendLoRaFrame(void)
 
 	lmh_error_status error = lmh_send(&m_lora_app_data, LMH_UNCONFIRMED_MSG);
 
-	sprintf(dbgBuffer, "UP Lat %.4f Lon %.4f Alt %d Pr %d B %u%%\n",
+	sprintf(dbgBuffer, "UP Lat %.4f Lon %.4f Alt %d Pr %d B %gV\n",
 			(trackerData.lat_1 | trackerData.lat_2 << 8 | trackerData.lat_3 << 16 | trackerData.lat_4 << 24 | (trackerData.lat_4 & 0x80 ? 0xFF << 24 : 0)) / 100000.0,
 			(trackerData.lng_1 | trackerData.lng_2 << 8 | trackerData.lng_3 << 16 | trackerData.lng_4 << 24 | (trackerData.lng_4 & 0x80 ? 0xFF << 24 : 0)) / 100000.0,
 			(trackerData.alt_1 | trackerData.alt_2 << 8 | (trackerData.alt_2 & 0x80 ? 0xFF << 16 : 0)),
 			trackerData.hdop,
-			trackerData.batt);
+			trackerData.batt * 0.1);
 	Serial.print(dbgBuffer);
 	if (error == LMH_SUCCESS)
 	{
@@ -333,8 +333,6 @@ void sendLoRaFrame(void)
 		{
 			bleuart.printf(dbgBuffer);
 		}
-		sprintf(dbgBuffer, "UP B %u%%\n",
-				trackerData.batt);
 		dispAddLine(dbgBuffer);
 		if (bleUARTisConnected)
 		{
