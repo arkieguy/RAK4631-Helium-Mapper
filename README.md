@@ -8,8 +8,7 @@ RAK4631 LoRaWan® Helium Mapper [RAKwireless](./assets/RAK-Whirls.png)
 
 Based extensively on: beegee-tokyo/RAK4631-LPWAN-Tracker
     
-This code acts as a LoRaWan® mapper node for the Helium Network. It gets location information from an attached uBlox GPS module. In addition an acceleration sensor is used to detect if the tracker is moving.
-If movement of the tracker is detected, location information is sent immediately. If the tracker is stationary, the location data is sent every 1 minute 
+This code can function provides data that can be fed into either (or both) the [Helium Cargo](https://docs.helium.com/use-the-network/console/integrations/cargo/) OR the [Helium Coverage Mapper](https://docs.helium.com/use-the-network/coverage-mapping/) for the Helium Network. It gets location information from an attached uBlox GPS module. In addition an acceleration sensor is used to detect if the tracker is moving. If movement of the tracker is detected, location information is sent immediately. If the tracker is stationary, the location data is sent every 1 minute 
 
 Solution
 ---
