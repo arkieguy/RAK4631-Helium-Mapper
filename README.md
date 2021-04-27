@@ -48,6 +48,9 @@ To build this solution the following is required
 - [nRF52_OLED](https://github.com/beegee-tokyo/nRF52_OLED)
 - [Sparkfun LIS3DH](https://github.com/sparkfun/SparkFun_LIS3DH_Arduino_Library)
 
+Setting Up your WisBlock core  on PlatformIO
+---
+PlatformIO is a great platform to develope embedded systems.  [Here are the instructions for getting Rak WisBlocks set up on PlatformIO.](https://github.com/RAKWireless/WisBlock/tree/master/PlatformIO/RAK4630)  Be aware that this project is based on the 2021 firmware (probably newer than what came on your WisBlock Core.  [To upgrade the firmware, follow the isntructions here.](https://github.com/RAKWireless/WisBlock/tree/master/bootloader/RAK4630/new)
 
 LoRaWan server required
 ---
