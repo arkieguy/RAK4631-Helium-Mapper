@@ -3,7 +3,7 @@
 | :-: | :-: |
 | <center><img src="./assets/rakstar.jpg" alt="RAKstar" width=25%></center> | <center><img src="./assets/WisBlock.svg" alt="WisBlock" width=75%></center> |    
 
-RAK4631 LoRaWan® Helium Mapper node solution![RAKwireless](./assets/RAK-Whirls.png)
+RAK4631 LoRaWan® Helium Mapper [RAKwireless](./assets/RAK-Whirls.png)
 ===
 
 Based extensively on: beegee-tokyo/RAK4631-LPWAN-Tracker
