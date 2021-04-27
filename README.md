@@ -54,12 +54,7 @@ PlatformIO is a great platform for developing embedded systems.  [Here are the i
 
 LoRaWan server required
 ---
-In order to get this code working you need access to a LoRaWan® gateway (configured for Helium US915). This could be either of    
-- a public LoRaWan® gateway, like [Helium Network](https://helium.com/) provides in several big cities all over the world
-- a private LoRaWan® gateway with multi-channel capability
-- a simple and cheap single channel LoRaWan® gateway
-
-In addition you need an account on Helium. You need to create an application there and register your device before the data you send over LoRa can be forwarded by the gateway. It is quite simple and there is a good tutorial at [Getting WisBlock by RAKwireless Up and Running on The People’s Network](https://blog.helium.com/my-take-on-the-wisblock-e8b934ceb64).
+In order to get this code working you need access to the [Helium Network](https://helium.com/).  Getting access to Helium is quite simple and there is a good tutorial at [Getting WisBlock by RAKwireless Up and Running on The People’s Network](https://blog.helium.com/my-take-on-the-wisblock-e8b934ceb64).
 
 The region you live in defines the frequency your LoRaWan® gateways will use. So you need to setup your device to work on the correct frequency.    
 ##### With the new LoRaWAN® library SX126x-Arduino **V2.0.0** the region is set as a parameter in **`lmh_init()`**.
@@ -98,7 +93,7 @@ This parameter selects the LoRaWAN region for your application. Allowed values f
 - _**LORAMAC_REGION_EU868**_    
 - _**LORAMAC_REGION_IN865**_    
 - _**LORAMAC_REGION_KR920**_    
-- _**LORAMAC_REGION_US915**_    
+- _**LORAMAC_REGION_US915**_ --Default--  
 - _**LORAMAC_REGION_US915_HYBRID**_
 
 Some explanation for the code
