@@ -43,7 +43,7 @@ To build this solution the following hardware is required
 Software required
 ---
 To build this solution the following is required
-- ArduinoIDE
+- [PlatformIO](https://platformio.org/)
 - [RAK4630 BSP](https://github.com/RAKWireless/RAK-nRF52-Arduino)
 - [SX126x-Arduino](https://github.com/beegee-tokyo/SX126x-Arduino)
 - [nRF52_OLED](https://github.com/beegee-tokyo/nRF52_OLED)
