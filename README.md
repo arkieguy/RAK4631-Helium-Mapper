@@ -8,7 +8,7 @@ RAK4631 LoRaWan® Helium Mapper [RAKwireless](./assets/RAK-Whirls.png)
 
 Based extensively on: beegee-tokyo/RAK4631-LPWAN-Tracker
     
-This module provides data that can be fed into either (or both) the [Helium Cargo](https://docs.helium.com/use-the-network/console/integrations/cargo/) app OR the [Helium Coverage Mapper](https://docs.helium.com/use-the-network/coverage-mapping/). 
+This module provides data that can be fed into the [Helium Cargo](https://docs.helium.com/use-the-network/console/integrations/cargo/) app and / or the [Helium Coverage Mapper](https://docs.helium.com/use-the-network/coverage-mapping/). 
 
 It gets location information from an attached uBlox GPS module and sends that data via LoRaWAN to the [Helium Console](https://console.helium.com). In addition an acceleration sensor is used to detect if the tracker is moving. If movement of the tracker is detected, location information is sent immediately. If the tracker is stationary, the location data is sent every 1 minute 
 
