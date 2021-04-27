@@ -26,12 +26,18 @@ This solution shows
 Hardware required
 ---
 To build this solution the following hardware is required
-- WisBase RAK5005-O
-- WisCore RAK4631
-- WisSensor RAK1904
-- WisSensor RAK1910
-- WisIO RAK1921
-- LiPo battery
+- [WisBlock Starter Kit -WisBase RAK5005-O & WisCore RAK4631](https://shop.parleylabs.com/collections/wisblock/products/wisblock-starter-kit)
+- [WisSensor RAK1904](https://shop.parleylabs.com/collections/wisblock/products/rak1904-lis3dh-3-axis-acceleration-sensor)
+- [WisSensor RAK1910](https://shop.parleylabs.com/collections/wisblock/products/rak1910-max-7q-gnss-location-sensor)
+- [WisIO RAK1921 - optional](https://shop.parleylabs.com/collections/wisblock/products/rak1921-oled-display-panel)
+- [18650 LiPo battery](https://amzn.to/3ewP896) --- Cheaper to buy light with batteries.
+- [Waterproof Case](https://amzn.to/3dRlI6q)
+- [Antenna](https://amzn.to/3dS3vWw)
+- [Battery Holder](https://amzn.to/3tTTcqo)
+
+| | | |
+| :-: | :-: | :-: |
+| <center><img src="./assets/PXL_20210427_015839254.jpg" width=75%></center> | <center><img src="./assets/PXL_20210427_015900466.jpg" width=75%></center> | <center><img src="./assets/PXL_20210427_024117331.jpg" width=75%></center> |
 
 Software required
 ---
