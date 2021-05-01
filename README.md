@@ -31,7 +31,7 @@ To build this solution the following hardware is required
 - [WisSensor RAK1904](https://shop.parleylabs.com/collections/wisblock/products/rak1904-lis3dh-3-axis-acceleration-sensor) - $3.95
 - [WisSensor RAK1910](https://shop.parleylabs.com/collections/wisblock/products/rak1910-max-7q-gnss-location-sensor) - $19.25
 - [WisIO RAK1921 - optional](https://shop.parleylabs.com/collections/wisblock/products/rak1921-oled-display-panel) - $6.00
-- [18650 LiPo battery](https://amzn.to/3ewP896) --- Cheaper to buy light with batteries. - $9.95
+- [18650 LiPo battery](https://amzn.to/3ewP896) - $21.99 (4 batteries + flashlight) OR [$9.95](https://www.digikey.com/en/products/detail/adafruit-industries-llc/1781/5054543?utm_adgroup=Batteries%20Rechargeable%20%28Secondary%29&utm_source=google&utm_medium=cpc&utm_campaign=Shopping_Product_Battery%20Products&utm_term=&utm_content=Batteries%20Rechargeable%20%28Secondary%29&gclid=Cj0KCQjw1a6EBhC0ARIsAOiTkrEgWo3i0Go5FBQo4EYKaHvbP68WP44AzHrlkkZNG6KdSXsDwEN2ljMaAjTlEALw_wcB) (battery by itself)
 - [Waterproof Case](https://amzn.to/3dRlI6q) - $14.99
 - [Antenna](https://amzn.to/3dS3vWw) - $10.99 (4)
 - [Battery Holder](https://amzn.to/3tTTcqo) - $6.99 (5)
