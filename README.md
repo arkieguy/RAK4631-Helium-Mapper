@@ -27,14 +27,15 @@ This solution shows
 Hardware required
 ---
 To build this solution the following hardware is required
-- [WisBlock Starter Kit -WisBase RAK5005-O & WisCore RAK4631](https://shop.parleylabs.com/collections/wisblock/products/wisblock-starter-kit)
-- [WisSensor RAK1904](https://shop.parleylabs.com/collections/wisblock/products/rak1904-lis3dh-3-axis-acceleration-sensor)
-- [WisSensor RAK1910](https://shop.parleylabs.com/collections/wisblock/products/rak1910-max-7q-gnss-location-sensor)
-- [WisIO RAK1921 - optional](https://shop.parleylabs.com/collections/wisblock/products/rak1921-oled-display-panel)
-- [18650 LiPo battery](https://amzn.to/3ewP896) --- Cheaper to buy light with batteries.
-- [Waterproof Case](https://amzn.to/3dRlI6q)
-- [Antenna](https://amzn.to/3dS3vWw)
-- [Battery Holder](https://amzn.to/3tTTcqo)
+- [WisBlock Starter Kit -WisBase RAK5005-O & WisCore RAK4631](https://shop.parleylabs.com/collections/wisblock/products/wisblock-starter-kit) - $29.99
+- [WisSensor RAK1904](https://shop.parleylabs.com/collections/wisblock/products/rak1904-lis3dh-3-axis-acceleration-sensor) - $3.95
+- [WisSensor RAK1910](https://shop.parleylabs.com/collections/wisblock/products/rak1910-max-7q-gnss-location-sensor) - $19.25
+- [WisIO RAK1921 - optional](https://shop.parleylabs.com/collections/wisblock/products/rak1921-oled-display-panel) - $6.00
+- [18650 LiPo battery](https://amzn.to/3ewP896) --- Cheaper to buy light with batteries. - $9.95
+- [Waterproof Case](https://amzn.to/3dRlI6q) - $14.99
+- [Antenna](https://amzn.to/3dS3vWw) - $10.99 (4)
+- [Battery Holder](https://amzn.to/3tTTcqo) - $6.99 (5)
+Total Cost: $96.11
 
 | | | |
 | :-: | :-: | :-: |
