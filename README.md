@@ -35,7 +35,9 @@ To build this solution the following hardware is required
 - [Waterproof Case](https://amzn.to/3dRlI6q) - $14.99
 - [Antenna](https://amzn.to/3dS3vWw) - $10.99 (4)
 - [Battery Holder](https://amzn.to/3tTTcqo) - $6.99 (5)
+
 Total Cost: $96.11
+---
 
 | | | |
 | :-: | :-: | :-: |
