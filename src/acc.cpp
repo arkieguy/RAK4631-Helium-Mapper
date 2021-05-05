@@ -54,8 +54,8 @@ bool initACC(void)
 	accSensor.writeRegister(LIS3DH_INT1_CFG, dataToWrite); // Enable interrupts on high tresholds for x, y and z
 
 	dataToWrite = 0;
-	//dataToWrite |= 0x10;								   // 1/8 range
-	dataToWrite |= 0x02;								   // Increased Sensitivity from Default
+	//dataToWrite |= 0x10;								   // Previous Value
+	dataToWrite |= 0x02;								   // Increased Sensitivity
 	accSensor.writeRegister(LIS3DH_INT1_THS, dataToWrite); // 1/8th range
 
 	dataToWrite = 0;
