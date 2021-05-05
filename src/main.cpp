@@ -135,7 +135,7 @@ void setup()
 
 	// Prepare timers
 	delayedSending.begin(10000, sendDelayed, NULL, false);
-	periodicSending.begin(15000, sendPeriodic);
+	periodicSending.begin(300000, sendPeriodic);  // Report location every 5 minutes
 	periodicSending.start();
 }
 
