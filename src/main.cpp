@@ -29,6 +29,9 @@ SoftwareTimer delayedSending;
 /** Timer for periodic sending */
 SoftwareTimer periodicSending;
 
+/** The GPS module to use */
+uint8_t gpsOption;
+
 // Forward declaration
 void sendDelayed(TimerHandle_t unused);
 void sendPeriodic(TimerHandle_t unused);
@@ -101,7 +104,7 @@ void setup()
 
 	// Initialize GPS module
 	dispAddLine((char *)"Init GPS");
-	initGPS();
+	gpsOption = initGPS();
 
 	digitalWrite(LED_BUILTIN, HIGH);
 
@@ -178,7 +181,7 @@ void loop()
 		Serial.println("Got semaphore");
 		if (bleUARTisConnected)
 		{
-			bleuart.println("Got semaphore");
+			bleuart.print("Got semaphore");
 		}
 		clearAccInt();
 		if (lmhJoined())
@@ -191,33 +194,35 @@ void loop()
 				digitalWrite(LED_BUILTIN, LOW);
 				if (bleUARTisConnected)
 				{
-					bleuart.println(dbgBuffer);
+					bleuart.print(dbgBuffer);
 				}
 				initMsg = true;
 			}
 			if (((millis() - lastPosSend) > 10000) || initMsg)
 			{
 				initMsg = false;
-				Serial.println("More than 10 seconds since last position message, send now");
+				Serial.println("More than 10 seconds since last position message, trying to get a new one");
 				if (bleUARTisConnected)
 				{
-					bleuart.println("More than 10 seconds since last position message, send now");
+					bleuart.print("More than 10 seconds since last position message, trying to get a new one\n");
 				}
 				lastPosSend = millis();
-				if (pollGPS())
+				if (pollGPS(gpsOption))
 				{
-					Serial.println("Valid GPS position");
+					Serial.println("Valid GPS position,\nsending LoRaWAN message");
 					if (bleUARTisConnected)
 					{
-						bleuart.println("Valid GPS position");
+						bleuart.print("Valid GPS position\nsending LoRaWAN message");
 					}
+					// Send the location information
+					sendLoRaFrame();
 				}
 				else
 				{
 					Serial.println("No valid GPS position");
 					if (bleUARTisConnected)
 					{
-						bleuart.println("No valid GPS position");
+						bleuart.print("No valid GPS position\n");
 					}
 				}
 
@@ -226,8 +231,6 @@ void loop()
 				trackerData.batt = battLevel;
 				// coords[9] = battLevel;
 
-				// Send the location information
-				sendLoRaFrame();
 			}
 			else
 			{
@@ -239,6 +242,9 @@ void loop()
 		else
 		{
 			Serial.println("Did not join network yet!");
+			if (bleUARTisConnected) {
+				bleuart.print("Did not join network yet!\n");
+			}
 		}
 		// Take the semaphore. Will be given back from the interrupt callback function
 		xSemaphoreTake(loopEnable, (TickType_t)10);
