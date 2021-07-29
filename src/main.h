@@ -41,11 +41,16 @@ bool initACC(void);
 void clearAccInt(void);
 extern SemaphoreHandle_t loopEnable;
 
+// GPS options
+#define RAK1910_GPS		1
+#define RAK12500_GPS	2
+
 // GPS functions
 #include "TinyGPS++.h"
 #include <SoftwareSerial.h>
-void initGPS(void);
-bool pollGPS(void);
+#include <SparkFun_u-blox_GNSS_Arduino_Library.h>	// RAK12500_GPS
+uint8_t initGPS(void);
+bool pollGPS(uint8_t gpsOption);
 // extern byte coords[];
 
 // Battery functions
