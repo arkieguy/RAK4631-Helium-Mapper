@@ -9,6 +9,9 @@
 #define HELIUM_TX       TX_POWER_0
 #define HELIUM_CONFIRM  LMH_UNCONFIRMED_MSG
 
+
+// KEYS ARE ALL IN MSB FORMAT
+
 // Device EUI required for OTAA network join=
 uint8_t nodeDeviceEUI[8] = {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
 
