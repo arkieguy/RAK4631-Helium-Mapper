@@ -138,7 +138,7 @@ void setup()
 
 	// Prepare timers
 	delayedSending.begin(10000, sendDelayed, NULL, false);
-	periodicSending.begin(10000, sendPeriodic);  // Report location every 5 minutes
+	periodicSending.begin(30000, sendPeriodic);  // Report location every 30 seconds
 	periodicSending.start();
 }
 
@@ -155,7 +155,7 @@ void sendDelayed(TimerHandle_t unused)
 }
 
 /**
- * @brief Timer function called frequently every 60 seconds to send
+ * @brief Timer function called frequently every 30 seconds to send
  * 			send the position, independant of any movement
  * 
  * @param unused 
@@ -163,7 +163,7 @@ void sendDelayed(TimerHandle_t unused)
  */
 void sendPeriodic(TimerHandle_t unused)
 {
-	if ((millis() - lastPosSend) > 10000)
+	if ((millis() - lastPosSend) > 30000)
 	{
 		xSemaphoreGiveFromISR(loopEnable, &xHigherPriorityTaskWoken);
 	}
@@ -198,13 +198,13 @@ void loop()
 				}
 				initMsg = true;
 			}
-			if (((millis() - lastPosSend) > 10000) || initMsg)
+			if (((millis() - lastPosSend) > 30000) || initMsg)
 			{
 				initMsg = false;
-				Serial.println("More than 10 seconds since last position message, trying to get a new one");
+				Serial.println("More than 30 seconds since last position message, trying to get a new one");
 				if (bleUARTisConnected)
 				{
-					bleuart.print("More than 10 seconds since last position message, trying to get a new one\n");
+					bleuart.print("More than 30 seconds since last position message, trying to get a new one\n");
 				}
 				lastPosSend = millis();
 				if (pollGPS(gpsOption))
@@ -234,7 +234,7 @@ void loop()
 			}
 			else
 			{
-				Serial.println("Less than 10 seconds since last position message, send delayed");
+				Serial.println("Less than 30 seconds since last position message, send delayed");
 				delayedSending.stop();
 				delayedSending.start();
 			}
